@@ -1,35 +1,20 @@
 # Learn Regex
 Examples based regex learning
 
-# Cheatsheet
-| Symbol | Meaning |
-| --- | --- |
-| . | Any character except new line |
-| \w | Word |
-| \W | Not Word |
-| \d | Digit |
-| \D | Not Digit |
-| \s | Whitespace |
-| \S | Not Whitespace |
-| [abc] | Any of a,b,c |
-| [^abc] | Not any of a,b,c |
-| [a-z] | Character from a to z |
-| ^abc | Start of the string |
-| abc$ | End of the string |
-| \b | Start of the string |
-
-
-# Character Handling
-# Basic match
+### Character Handling
+#### Basic match
 Match exact characters.
 
-```
-`name` => My `name` is Imran.
-`apple` => I have an `apple` and a banana. My friend also has an `apple`.
-```
+"men" => "The [cat]() and wo[men]()."
 
-## [abc] character set
+#### [abc] character set
 Match any character in the set.
 
-`[tT]he` => `The` man and `the` woman.
+"[bc]at" => "The [cat]() and the [bat]() and the rat are having a chat." <br>
+"[tT]he" => [The]() man and [the]() woman. <br>
 
+
+#### [^abc] negated set
+Match any character that is not in the set.
+
+[^bc]at => The cat and the bat and the [rat]() are having a c[hat]().
