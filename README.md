@@ -2,7 +2,7 @@
 Examples based regex learning
 
 ## Character Handling
-### Basic match
+### basic match
 Match exact characters.
 
 <pre>
@@ -23,4 +23,18 @@ Match any character that is not in the set.
 
 <pre>
 [^bc]at => The cat and the bat and the <a href="#x">rat</a> are having a c<a href="#x">hat</a>.
-</pre>\
+</pre>
+
+### [a-z] range set
+Match any character between the the two specified character.
+
+<pre>
+[0-9] => My ID number is <a href="#x">176584</a>.
+</pre>
+
+### . dot operator
+Match any character except linebreaks.
+
+<pre>
+.at => The <a href="#x">cat</a> and the <a href="#x">bat</a> and the <a href="#x">rat</a> are having a c<a href="#x">hat</a>.
+</pre>
