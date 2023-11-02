@@ -238,3 +238,45 @@ Groups characters but doesn't capture.
 (?:\d{4})-(?&lt;month&gt;\d{2})-(\d{2})=> Today is <a href="#x">2023-11-02</a>.
 # captures two groups, one named "month" another unnamed
 </pre>
+
+
+## Lookaround
+### (?=) positive lookahead
+Get all the matches that are followed by a specific pattern.
+
+<pre>
+\d(?=px) => 1pt <a href="#x">2</a>px 3em <a href="#x">4</a>px
+</pre>
+
+### (?!) negative lookahead
+Get all the matches that are not followed by a specific pattern.
+
+<pre>
+\d(?!px) => <a href="#x">1</a>pt 2px <a href="#x">3</a>em 4px
+</pre>
+
+### (?<=) positive lookbehind
+Get all the matches that are preceded by a specific pattern.
+
+<pre>
+(?<=name)\d => name<a href="#x">1</a> age1 name<a href="#x">2</a> sex1
+</pre>
+
+### (?<!) negative lookbehind
+get all the matches that are not preceded by a specific pattern.
+
+<pre>
+(?<!name)\d => name1 age<a href="#x">1</a> name2 sex<a href="#x">1</a>
+</pre>
+
+
+## Flags
+### g global search
+
+### i case insensitive
+
+### m multiline
+
+### s dotall
+
+### u unicode
