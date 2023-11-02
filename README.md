@@ -13,7 +13,7 @@ men => The [cat]() and wo[men]().
 Match any character in the set.
 
 <pre>
-[bc]at => The [cat]() and the [bat]() and the rat are having a chat.
+[bc]at => The <a>cat</a> and the <a href="#">bat</a> and the rat are having a chat.
 [tT]he => [The]() man and [the]() woman.
 </pre>
 
