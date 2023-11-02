@@ -1,5 +1,5 @@
 # Learn Regex
-Examples based regex learning
+Examples based Regex cheatsheet. Examples assumes `/g` flag is on.
 
 ## Character Handling
 ### basic match
@@ -220,14 +220,14 @@ Groups characters and captures (stores) for futher processing.
 Tags a group nam for the groups for futher processing.
 
 <pre>
-(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\d{2})=> Today is <a href="#x">2023-11-02</a>.
+(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\d{2}) => Today is <a href="#x">2023-11-02</a>.
 </pre>
 
 ### () \1 group reference
 Matches the given group number only.
 
 <pre>
-(\d{4})-(\d{2})-(\d{2})\1=> Today is <a href="#x">2023-11-02</a>.
+(\d{4})-(\d{2})-(\d{2})\1 => Today is <a href="#x">2023-11-02</a>.
 # first group is referenced 
 </pre>
 
@@ -235,7 +235,7 @@ Matches the given group number only.
 Groups characters but doesn't capture.
 
 <pre>
-(?:\d{4})-(?&lt;month&gt;\d{2})-(\d{2})=> Today is <a href="#x">2023-11-02</a>.
+(?:\d{4})-(?&lt;month&gt;\d{2})-(\d{2}) => Today is <a href="#x">2023-11-02</a>.
 # captures two groups, one named "month" another unnamed
 </pre>
 
@@ -259,24 +259,75 @@ Get all the matches that are not followed by a specific pattern.
 Get all the matches that are preceded by a specific pattern.
 
 <pre>
-(?<=name)\d => name<a href="#x">1</a> age1 name<a href="#x">2</a> sex1
+(?&lt;=name)\d => name<a href="#x">1</a> age1 name<a href="#x">2</a> sex1
 </pre>
 
 ### (?<!) negative lookbehind
 get all the matches that are not preceded by a specific pattern.
 
 <pre>
-(?<!name)\d => name1 age<a href="#x">1</a> name2 sex<a href="#x">1</a>
+(?&lt;!name)\d => name1 age<a href="#x">1</a> name2 sex<a href="#x">1</a>
 </pre>
 
 
 ## Flags
 ### g global search
+Find all matches unlike stopping after the first match.
+
+<pre>
+# default is just find one
+at => The c<a href="#x">at</a> and the bat and the rat are having a chat.
+
+# adding /g flag will search all
+/t/g => The c<a href="#x">at</a> and the b<a href="#x">at</a> and the r<a href="#x">at</a> are having a ch<a href="#x">at</a>.
+</pre>
 
 ### i case insensitive
+Case insensitive search.
+
+<pre>
+/the/gi => <a href="#x">The</a> man and <a href="#x">the</a> woman.
+</pre>
 
 ### m multiline
+Apply anchors(^ $ \b \B) at each line.
+
+<pre>
+# default
+/at$/g =>  The cat
+        and the bat
+        and the r<a href="#x">at</a>
+
+# adding /m flag will match the anchors at each line
+/at$/gm =>  The c<a href="#x">at</a>
+        and the b<a href="#x">at</a>
+        and the r<a href="#x">at</a>
+</pre>
 
 ### s dotall
+Dot (.) will match any character, including newline.
 
-### u unicode
+<pre>
+# default
+/.+/ => <a href="#x">The man</a>
+        and the woman.
+
+# adding /s flag will match newline
+/.+/ => <a href="#x">The man</a>
+        <a href="#x">and the woman.</a>
+
+</pre>
+
+
+## Greedy vs Lazy Matching
+Default is greedy, that matches as many characters as possible. <br>
+
+<pre>
+.+at => <a href="#x">The cat and the bat and the rat are having a chat</a>.
+</pre>
+
+Lazy makes is as few as possible.
+
+<pre>
+.+?at => <a href="#x">The cat</a> and the bat and the rat are having a chat.
+</pre>
