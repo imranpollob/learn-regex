@@ -18,3 +18,18 @@ Examples based regex learning
 | abc$ | End of the string |
 | \b | Start of the string |
 
+
+# Character Handling
+# Basic match
+Match exact characters.
+
+```
+`name` => My `name` is Imran.
+`apple` => I have an `apple` and a banana. My friend also has an `apple`.
+```
+
+## [abc] character set
+Match any character in the set.
+
+`[tT]he` => `The` man and `the` woman.
+
