@@ -5,21 +5,22 @@ Examples based regex learning
 ### Basic match
 Match exact characters.
 
-```
-men => The [cat]() and wo[men]().
-```
+<pre>
+men => The <a href="#x">men</a> and wo<a href="#x">men</a>.
+</pre>
+
 
 ### [abc] character set
 Match any character in the set.
 
 <pre>
-[bc]at => The <a>cat</a> and the <a href="#">bat</a> and the rat are having a chat.
-[tT]he => [The]() man and [the]() woman.
+[tT]he => <a href="#x">The</a> man and <a href="#x">the</a> woman.
+[bc]at => The <a href="#x">cat</a> and the <a href="#x">bat</a> and the rat are having a chat.
 </pre>
 
 ### [^abc] negated set
 Match any character that is not in the set.
 
-```
-[^bc]at => The cat and the bat and the [rat]() are having a c[hat]().
-```
+<pre>
+[^bc]at => The cat and the bat and the <a href="#x">rat</a> are having a c<a href="#x">hat</a>.
+</pre>\
