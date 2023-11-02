@@ -38,3 +38,57 @@ Match any character except linebreaks.
 <pre>
 .at => The <a href="#x">cat</a> and the <a href="#x">bat</a> and the <a href="#x">rat</a> are having a c<a href="#x">hat</a>.
 </pre>
+
+Equivalent: [^\n\r]
+
+### \w word
+Match any word (alphanumeric and underscore).
+
+<pre>
+\w => <a href="#x">PI</a> (π) = <a href="#x">3</a>.<a href="#x">1416</a>
+</pre>
+
+Equivalent: [a-zA-Z0-9_]
+
+### \W not word
+Match any non word (not alphanumeric and underscore).
+
+<pre>
+\W => PI<a href="#x"> π = </a>3<a href="#x">.</a>1416</a>
+</pre>
+
+Equivalent: [^a-zA-Z0-9_]
+
+### \d digit
+Match any digit.
+
+<pre>
+\d => PI (π) = <a href="#x">3</a>.<a href="#x">1416</a>
+</pre>
+
+Equivalent: [0-9]
+
+### \D not digit
+Match any non digit.
+
+<pre>
+\D => <a href="#x">PI (π) = </a>3<a href="#x">.</a>1416
+</pre>
+
+Equivalent: [^0-9]
+
+### \s whitespace
+Match any whitespace
+
+<pre>
+\s => PI<a href="#x"> </a>(π)<a href="#x"> </a>=<a href="#x"> </a>3.1416
+</pre>
+
+### \S whitespace
+Match any non whitespace
+
+<pre>
+\s => <a href="#x">PI</a> <a href="#x">(π)</a> <a href="#x">=</a> <a href="#x">3.1416</a>
+</pre>
+
+
