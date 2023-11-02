@@ -136,7 +136,7 @@ Matches special reserved characters `+*?^$\.[]{}()|/`.
 Matches a TAB character.
 
 <pre>
-\t => Tab1<a href="#x">	</a>Tab2
+\t => Tab1<a href="#x">    </a>Tab2
 </pre>
 
 
@@ -146,8 +146,6 @@ Matches a TAB character.
 \v = Matches vertical tab character 
 \f = Matches form feed character 
 \r = Matches carriage return character 
-\0 = Matches null character
-\ = Matches null character
 \0 = Matches null character
 </pre>
 
@@ -167,3 +165,76 @@ Matches a TAB character.
 \u00A9 => RegExr is <a href="#x">©</a>2014
 </pre>
 
+
+## Quatifiers
+### * zero or more
+Matches 0 or more of the preceding character.
+
+<pre>
+\s*man\s* => The<a href="#x"> man </a>and wo<a href="#x">man</a>.
+</pre>
+
+### + one or more
+Matches 1 or more of the preceding character.
+
+<pre>
+w\w+n => The man and <a href="#x">woman</a>.
+</pre>
+
+### ? optional
+Matches 0 or more of the preceding character.
+
+<pre>
+[cC]olou?r => <a href="#x">Color</a> or <a href="#x">colour</a>?
+</pre>
+
+### {} quantifier
+Matches the specific quantity of the preceding character. <br>
+{3} = matches exactly 3 <br>
+{1,3} = matches 1 to 3 <br>
+{3,} = matches 3 or more <br>
+
+<pre>
+\d{3} => PI (π)</a> = 3.<a href="#x">141</a>6
+\d{1,4} => PI (π)</a> = <a href="#x">3</a>.<a href="#x">1416</a>
+\d{2,} => PI (π)</a> = 3.<a href="#x">1416</a>
+</pre>
+
+### | alternation
+Acts like an OR statment. Matches at expression level unlike []
+
+<pre>
+[cbr]at|and => The <a href="#x">cat</a> <a href="#x">and</a> the <a href="#x">bat</a> <a href="#x">and</a> the <a href="#x">rat</a> are having a chat.
+</pre>
+
+
+## Groups
+### () capturing group
+Groups characters and captures (stores) for futher processing.
+
+<pre>
+(\d{4})-(\d{2})-(\d{2}) => Today is <a href="#x">2023-11-02</a>.
+</pre>
+
+### (?<>) named capturing group
+Tags a group nam for the groups for futher processing.
+
+<pre>
+(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\d{2})=> Today is <a href="#x">2023-11-02</a>.
+</pre>
+
+### () \1 group reference
+Matches the given group number only.
+
+<pre>
+(\d{4})-(\d{2})-(\d{2})\1=> Today is <a href="#x">2023-11-02</a>.
+# first group is referenced 
+</pre>
+
+### (?:) non capturing group
+Groups characters but doesn't capture.
+
+<pre>
+(?:\d{4})-(?&lt;month&gt;\d{2})-(\d{2})=> Today is <a href="#x">2023-11-02</a>.
+# captures two groups, one named "month" another unnamed
+</pre>
