@@ -1,6 +1,8 @@
 # Learn Regex
 Examples based Regex cheatsheet. Examples assumes `/g` flag is on.
 
+![cheatsheet](01.png)
+
 - [Character Handling](#character-handling)
   - [basic match](#basic-match)
   - [\[abc\] character set](#abc-character-set)
