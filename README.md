@@ -6,7 +6,7 @@ Examples based Regex cheatsheet. Examples assumes `/g` flag is on.
   - [\[abc\] character set](#abc-character-set)
   - [\[^abc\] negated set](#abc-negated-set)
   - [\[a-z\] range set](#a-z-range-set)
-  - [. dot operator](#-dot-operator)
+  - [. any character](#-any-character)
   - [\\w word](#w-word)
   - [\\W not word](#w-not-word)
   - [\\d digit](#d-digit)
@@ -75,10 +75,10 @@ Matches any character that is not in the set.
 Matches any character between the the two specified character.
 
 <pre>
-[0-9] => My ID number is <a href="#x">176584</a>.
+[0-9] => My ID number is <a href="#x">0123456789</a>.
 </pre>
 
-### . dot operator
+### . any character
 Matches any character except linebreaks.
 
 <pre>
@@ -359,7 +359,7 @@ Dot (.) will match any character, including newline.
         and the woman.
 
 # adding /s flag will match newline
-/.+/ => <a href="#x">The man</a>
+/.+/s => <a href="#x">The man</a>
         <a href="#x">and the woman.</a>
 
 </pre>
